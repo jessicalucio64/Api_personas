@@ -1,6 +1,6 @@
 const input = document.querySelector("#searchInput");
 const userList = document.querySelector("#users");
-let url = "https://fakerapi.it/api/v1/users?_quantity=1000";
+let url = "https://fakerapi.it/api/v1/persons?_quantity=10";
 let users = [];
 
 document.addEventListener("DOMContentLoaded", async() => {
@@ -30,9 +30,15 @@ const createUserItems = (users) =>
     users
     .map(
         (user) =>
-        `<li class="bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer">
-    ${user.firstname} ${user.lastname}
-    </li>`
+        `<tr>
+            <td>${user.firstname} </td>  
+            <td>${user.lastname}</td>  
+            <td>${user.gender}</td>  
+        
+        
+        </tr>
+   
+    `
     )
     .join(" ");
 
