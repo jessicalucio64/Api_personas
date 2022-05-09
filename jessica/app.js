@@ -30,17 +30,24 @@ const createUserItems = (users) =>
     users
     .map(
         (user) =>
-        `<tr>
+        `
+        <tr>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>gender</th>
+        </tr>
+        <tr>
             <td>${user.firstname} </td>  
             <td>${user.lastname}</td>  
             <td>${user.gender}</td>  
         
         
-        </tr>
-   
-    `
+        </tr> 
+        `
+
     )
-    .join(" ");
+
+.join(" ");
 
 function renderUsers(users) {
     const itemsString = createUserItems(users);
