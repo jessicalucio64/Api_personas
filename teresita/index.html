@@ -10,17 +10,25 @@
 </head>
 
 <body class="bg-zinc-900 text-white">
+    <div class="container mx-auto text-center px-30 py-2">
+        <input type="text" placeholder="Buscar Una Palabra" id="searchInput"
+            class="bg-gray-800 text-white px-4 py-2 text-center"
+            autocomplete="off"
+        />
 
-  <div class="container mx-auto text-center px-30 py-2">
-    <input type="text" placeholder="Buscar Una Palabra" id="searchInput"
-      class="bg-gray-800 text-white px-4 py-2 text-center"
-      autocomplete="off"
-    />
+        <!-- <ol id="users"></ol>  -->
+        <div style="width: 100wv; background:red;">
+            <table id="usersTable" style="border:1; background: gray; display: flex; flex-direction:colum; justify-content:center;">
+                <table id="users" style="border:1; display: flex; flex-direction:colum; justify-content:center;">
+                    <tbody>
 
-    <ol id="users"></ol>
-  </div>
+                    </tbody>
+                </table>
+            </table> 
+        </div>
+    </div>
   
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
