@@ -1,0 +1,14 @@
+.tabla1{
+    margin: 0 auto;
+    background: red;
+}
+.tabla2{
+    margin: 0 auto;
+    /* background: red; */
+}
+.genero1{
+    color: blueviolet;
+}
+.genero2{
+    color: greenyellow;
+}
