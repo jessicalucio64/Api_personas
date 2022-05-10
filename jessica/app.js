@@ -3,6 +3,7 @@ const usercabecera = document.querySelector('#usercabecera');
 const userList = document.querySelector('#users');
 var encabezado = document.getElementById("encabezado1");
 var tabla = document.getElementById("tab");
+var tabla2 = document.getElementById("users");
 //encabezado.style.backgroundColor = "red";
 
 let users = [];
@@ -25,10 +26,9 @@ input.addEventListener('keyup', e => {
 
 
     const newUsers = users.filter(user => `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()} `.includes(input.value.toLowerCase()));
+    tabla2.style.color = "blue";
+
     return renderUsers(newUsers)
-
-
-
 
 });
 
@@ -74,8 +74,4 @@ function renderUsers(users) {
 
     usercabecera.innerHTML = itemsTable;
     userList.innerHTML = itemsString;
-}
-
-function color(parametro) {
-
 }
