@@ -5,22 +5,41 @@
     --moradoSelect: #cfa0ff;
 }
 
-.contenido {
-    width: 100wv; 
-    /* background:red; */
-}
-
-.contenido__tablaP{
-    /* background: gray;  */
-    display: flex; 
-    justify-content:center;
-    
-}
-
-.contenido__tablaC{
+.contenido__tabla{
+    width: 100%;
     color: black;
     display: flex; 
     justify-content:center;
+}
+
+.contenido__tabla td:nth-child(1),th:nth-child(1){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(2),th:nth-child(2){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(3),th:nth-child(3){
+    width: 246px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(4),th:nth-child(4){
+    width: 145px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(5),th:nth-child(5){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(6),th:nth-child(6){
+    width: 145px;
+    border: 2px solid white;
 }
 
 .male{
@@ -44,4 +63,8 @@
 td, th, tr{
     padding: 10px;
     border: white 1px solid;
+}
+
+th{
+    color: white;
 }
