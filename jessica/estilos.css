@@ -1,7 +1,9 @@
 .hombre {
-    color: purple;
+    color: white;
+    background: purple;
 }
 
 .mujer {
-    color: greenyellow;
+    background: greenyellow;
+    color: black;
 }
