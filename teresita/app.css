@@ -1,0 +1,47 @@
+:root { 
+	--verde: #bbf2bb;
+    --verdeSelect: #96f5b3;
+	--morado: #c8b6ff; 
+    --moradoSelect: #cfa0ff;
+}
+
+.contenido {
+    width: 100wv; 
+    /* background:red; */
+}
+
+.contenido__tablaP{
+    /* background: gray;  */
+    display: flex; 
+    justify-content:center;
+    
+}
+
+.contenido__tablaC{
+    color: black;
+    display: flex; 
+    justify-content:center;
+}
+
+.male{
+    background: var(--verde);
+}
+
+.male:hover{
+    background: var(--verdeSelect);
+    color: #008109;
+}
+
+.female{
+    background: var(--morado);
+}
+
+.female:hover{
+    background: var(--moradoSelect);
+    color: #6505a6;
+}
+
+td, th, tr{
+    padding: 10px;
+    border: white 1px solid;
+}

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 input.addEventListener('keyup', e => {
-    const newUsers = users.filter(user => `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()}`.includes(input.value.toLowerCase()));
+    const newUsers = users.filter(user => `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.email.toLowerCase()} ${user.phone.toLowerCase()} ${user.birthday.toLowerCase()}${user.gender.toLowerCase()}`.includes(input.value.toLowerCase()));
     renderUsers(newUsers);
 });
 
@@ -26,20 +26,39 @@ async function loadUsers(){
 
 // const createUserItems = users => users.map(user => `<li class="bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer">${user.firstname} ${user.lastname}</li>`).join(' ');
 
-const createUserItems = users => users.map(user => `
-    <tr>
-        <td>${user.firstname}</td>
-        <td>${user.lastname}</td>
-        <td>${user.gender}</td>
-    </tr>
-`).join(' ');
+const createUserItems = users => users.map(user => {
+    if(user.gender == "male"){
+        return `
+        <tr class="male">
+            <td sytle="width: 150px;">${user.firstname}</td>
+            <td sytle="width: 150px;">${user.lastname}</td>
+            <td style="width: 246px;">${user.email}</td>
+            <td style="width: 145px;">${user.phone}</td>
+            <td style="width: 150px;">${user.birthday}</td>
+            <td style="width: 145px;">Hombre</td>
+        </tr>`;
+    }else{
+        return `
+            <tr class="female">
+                <td sytle="width: 150px;">${user.firstname}</td>
+                <td sytle="width: 150px;">${user.lastname}</td>
+                <td style="width: 246px;">${user.email}</td>
+                <td style="width: 145px;">${user.phone}</td>
+                <td style="width: 150px;">${user.birthday}</td>
+                <td style="width: 145px;">Mujer</td>
+            </tr>`; 
+    }
+}).join(' ');
 
 function renderUsers(users) {
     const itemsTable= `
-        <thead>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Genero</th>
+        <thead">
+            <th sytle="width: 150px;">Nombre</th>
+            <th sytle="width: 150px;">Apellido</th>
+            <th style="width: 246px;">Email</th>
+            <th style="width: 145px;">Teléfono</th>
+            <th style="width: 150px;">Fecha de nacimiento</th>
+            <th style="width: 145px;">Genero</th>
         </thead>
     `;
 
