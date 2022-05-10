@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', async () =>{
 });
 
 input.addEventListener('keyup',e =>{
-    const newUsers = users.filter(user =>`${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} `.includes(input.value.toLowerCase()));
+    const newUsers = users.filter(user =>
+        `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()} ${user.email.toLowerCase()} ${user.phone.toLowerCase()} ${user.birthday.toLowerCase()}`.includes(input.value.toLowerCase()));
+
     return renderUsers(newUsers)
 });
 
@@ -21,7 +23,8 @@ async function loadUsers(){
 }
 
 const createUsersItems = users=>users.map(user=>{
-    if(users.gender == 'male'){
+    if(user.gender == 'male' || user.gender=='hombre'){
+        user.gender= 'hombre'
         return `
             <table border='1'  align='center' >
                     <tr class="genero1">
@@ -34,6 +37,7 @@ const createUsersItems = users=>users.map(user=>{
                     </tr>
                 </table >`
     }else{
+        user.gender= 'mujer'
         return `
             <table border='1'  align='center' >
                     <tr class="genero2">
@@ -48,16 +52,7 @@ const createUsersItems = users=>users.map(user=>{
     }
 }).join('');
       
- 
-
 function renderUsers(users){
     const itemsString = createUsersItems(users)
     userList.innerHTML = itemsString
-}
-                                                                                
-function cambiaColor(){
-    celda = document.getElementById('genero');
-    if (celda == 'male'){
-        celda.style.color=document.blue;
-    }
 }
