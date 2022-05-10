@@ -1,11 +1,15 @@
 .tablita{
     width: 90%;
 }
+.genero1{
+    background-color: blueviolet;
+}
+.genero2{
+    background-color: greenyellow;
+    color: black;
+}
 .tablita th{
     background-color: #f1cc00;
-}
-.tablita td{
-    background-color: #95b3d7;
 }
 .tablita td:nth-child(1),th:nth-child(1){
     width: 80px;
