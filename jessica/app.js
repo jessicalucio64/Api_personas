@@ -20,17 +20,21 @@ document.addEventListener('DOMContentLoaded', async() => {
     renderUsers(users);
 });
 
+
 input.addEventListener('keyup', e => {
-    const newUsers = users.filter(user => `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()}`.includes(input.value.toLowerCase()));
-    renderUsers(newUsers);
+
+
+    const newUsers = users.filter(user => `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()} `.includes(input.value.toLowerCase()));
+    return renderUsers(newUsers)
+
 
 
 
 });
 
+
 async function loadUsers() {
     let respuesta = await fetch(url);
-
     return res = respuesta.json();
 
 }
@@ -38,39 +42,27 @@ async function loadUsers() {
 // const createUserItems = users => users.map(user => `<li class="bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer">${user.firstname} ${user.lastname}</li>`).join(' ');
 if (user => user.gender === 'male') {
     tabla.style.backgroundColor = "red";
-
-
-
 };
 
 const createUserItems = users => users.map(user => {
-
-        if (user.gender == "male") {
-
-            return `<tr class="hombre">
+    if (user.gender == "male" || user.gender == "hombre") {
+        user.gender = "hombre";
+        return `<tr class="hombre">
             <td>${user.firstname}</td>
             <td>${user.lastname}</td>
             <td>${user.gender}</td>
             </tr>`;
-
-
-        } else {
-            return `<tr class="mujer">
+    } else {
+        user.gender = "mujer";
+        return `<tr class="mujer">
             <td>${user.firstname}</td>
             <td>${user.lastname}</td>
             <td>${user.gender}</td>
             </tr>`;
-
-        }
-
     }
-
-).join(' ')
-
-
+}).join(' ')
 
 function renderUsers(users) {
-
     const itemsTable = `
         <thead>
             <th>FirstName</th>
