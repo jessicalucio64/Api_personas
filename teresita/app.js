@@ -3,7 +3,7 @@ const userTable = document.querySelector('#usersTable');
 const userList = document.querySelector('#users');
 let users = [];
 
-let url = "https://fakerapi.it/api/v1/users?_quantity=10";
+let url = "https://fakerapi.it/api/v1/persons?_quantity=10";
 
 document.addEventListener('DOMContentLoaded', async () => {
     userList.innerHTML = `<h1>Cargando...</h1>`;
@@ -30,14 +30,16 @@ const createUserItems = users => users.map(user => `
     <tr>
         <td>${user.firstname}</td>
         <td>${user.lastname}</td>
+        <td>${user.gender}</td>
     </tr>
 `).join(' ');
 
 function renderUsers(users) {
     const itemsTable= `
         <thead>
-            <th>FirstName</th>
-            <th>LastName</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Genero</th>
         </thead>
     `;
 

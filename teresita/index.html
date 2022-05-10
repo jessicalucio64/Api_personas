@@ -7,6 +7,27 @@
   <title>replit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+
+    .contenido {
+        width: 100wv; 
+        background:red;
+    }
+
+    .contenido__tablaP{
+        border:1; 
+        background: gray; 
+        display: flex; 
+        flex-direction:colum; 
+        justify-content:center;
+    }
+
+    .contenido__tablaC{
+        border:1; 
+        display: flex; 
+        justify-content:center;
+    }
+  </style>
 </head>
 
 <body class="bg-zinc-900 text-white">
@@ -17,9 +38,9 @@
         />
 
         <!-- <ol id="users"></ol>  -->
-        <div style="width: 100wv; background:red;">
-            <table id="usersTable" style="border:1; background: gray; display: flex; flex-direction:colum; justify-content:center;">
-                <table id="users" style="border:1; display: flex; flex-direction:colum; justify-content:center;">
+        <div class="contenido">
+            <table class="contenido__tablaP" id="usersTable">
+                <table class="contenido__tablaC" id="users">
                     <tbody>
 
                     </tbody>
