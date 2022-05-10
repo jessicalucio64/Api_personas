@@ -40,9 +40,7 @@ async function loadUsers() {
 }
 
 // const createUserItems = users => users.map(user => `<li class="bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer">${user.firstname} ${user.lastname}</li>`).join(' ');
-if (user => user.gender === 'male') {
-    tabla.style.backgroundColor = "red";
-};
+
 
 const createUserItems = users => users.map(user => {
     if (user.gender == "male" || user.gender == "hombre") {
@@ -54,6 +52,7 @@ const createUserItems = users => users.map(user => {
             </tr>`;
     } else {
         user.gender = "mujer";
+        //tabla.style.backgroundColor = "black";
         return `<tr class="mujer">
             <td>${user.firstname}</td>
             <td>${user.lastname}</td>
