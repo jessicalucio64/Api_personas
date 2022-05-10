@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 input.addEventListener('keyup', e => {
     const newUsers = users.filter(user => { 
-       return `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} `.includes(input.value.toLowerCase()) 
+       return `${user.firstname.toLowerCase()} ${user.phone.toLowerCase()} ${user.email.toLowerCase()} ${user.birthday.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()}`.includes(input.value.toLowerCase()) 
     })
     renderUsers(newUsers);
    
@@ -21,36 +21,40 @@ input.addEventListener('keyup', e => {
 
 async function loadUsers() {
     let respuesta = await fetch(url);
-    return (res = respuesta.json());
+    return res = respuesta.json();
 }
 
-const createUserItems = (users) =>
-    users
-        .map(
-            (user) =>
-            // `<li class="bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer">
-            
-            // ${user.firstname} ${user.lastname} ${user.phone} ${user.email} ${user.gender} ${user.birthday} 
-            // </li>`
-
-            `<table>
-                <tbody>
-                    <tr>
-                        <td>${user.firstname}</td>
-                        <td>${user.lastname}</td>
-                        <td>${user.phone}</td>
-                        <td>${user.email}</td>
-                        <td>`
-                        
-                        `</td>
-                        <td>${user.birthday}</td>
-                    </tr>
-                </tbody>
+const createUsersItems = users=>users.map(user=>{
+    if(user.gender == 'male' || user.gender == 'hombre'){
+        user.gender = 'hombre'
+        return `
+            <table>
+                <tr class="genero1">
+                    <td>${user.firstname}</td>
+                    <td>${user.lastname}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.email}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.birthday}</td>
+                </tr>
             </table>`
-        )
-    .join(" ");
+    }else{
+        user.gender = 'mujer'
+        return `
+            <table>
+                <tr class="genero2">
+                    <td>${user.firstname}</td>
+                    <td>${user.lastname}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.email}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.birthday}</td>
+                </tr>
+            </table>`
+    }
+}).join('');
 
 function renderUsers(users) {
-    const itemsString = createUserItems(users);
+    const itemsString = createUsersItems(users);
     userList.innerHTML = itemsString;
 }
