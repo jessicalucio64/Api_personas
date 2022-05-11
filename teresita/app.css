@@ -7,7 +7,6 @@
 
 .contenido__tabla{
     width: 100%;
-    color: black;
     display: flex; 
     justify-content:center;
 }
@@ -48,7 +47,7 @@
 
 .male:hover{
     background: var(--verdeSelect);
-    color: #008109;
+    /* color: #008109; */
 }
 
 .female{
@@ -57,11 +56,12 @@
 
 .female:hover{
     background: var(--moradoSelect);
-    color: #6505a6;
+    /* color: #6505a6; */
 }
 
 td, th, tr{
     padding: 10px;
+    color: black;
     border: white 1px solid;
 }
 
