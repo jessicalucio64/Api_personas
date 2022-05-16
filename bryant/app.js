@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', async () =>{
 
 input.addEventListener('keyup',e =>{
     const newUsers = users.filter(user =>
-        `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} ${user.gender.toLowerCase()} ${user.email.toLowerCase()} ${user.phone.toLowerCase()} ${user.birthday.toLowerCase()}`.includes(input.value.toLowerCase()));
+        `${user.firstname.toLowerCase()} ${user.lastname.toLowerCase()} 
+        ${user.gender.toLowerCase()} ${user.email.toLowerCase()} 
+        ${user.phone.toLowerCase()} ${user.birthday.toLowerCase()}`
+        .includes(input.value.toLowerCase()));
 
     return renderUsers(newUsers)
 });
@@ -24,7 +27,7 @@ async function loadUsers(){
 
 const createUsersItems = users=>users.map(user=>{
     if(user.gender == 'male' || user.gender=='hombre'){
-        user.gender= 'hombre'
+        user.gender = 'hombre'
         return `
             <table border='1'  align='center' >
                     <tr class="genero1">
