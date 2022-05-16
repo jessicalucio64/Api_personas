@@ -5,22 +5,40 @@
     --moradoSelect: #cfa0ff;
 }
 
-.contenido {
-    width: 100wv; 
-    /* background:red; */
-}
-
-.contenido__tablaP{
-    /* background: gray;  */
+.contenido__tabla{
+    width: 100%;
     display: flex; 
     justify-content:center;
-    
 }
 
-.contenido__tablaC{
-    color: black;
-    display: flex; 
-    justify-content:center;
+.contenido__tabla td:nth-child(1),th:nth-child(1){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(2),th:nth-child(2){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(3),th:nth-child(3){
+    width: 246px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(4),th:nth-child(4){
+    width: 145px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(5),th:nth-child(5){
+    width: 150px;
+    border: 2px solid white;
+}
+
+.contenido__tabla td:nth-child(6),th:nth-child(6){
+    width: 145px;
+    border: 2px solid white;
 }
 
 .male{
@@ -29,7 +47,7 @@
 
 .male:hover{
     background: var(--verdeSelect);
-    color: #008109;
+    /* color: #008109; */
 }
 
 .female{
@@ -38,10 +56,15 @@
 
 .female:hover{
     background: var(--moradoSelect);
-    color: #6505a6;
+    /* color: #6505a6; */
 }
 
 td, th, tr{
     padding: 10px;
+    color: black;
     border: white 1px solid;
+}
+
+th{
+    color: white;
 }
